@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="闭包的概念：不同解读一览以下节选了一些对闭包概念的不同理解，基本都没偏离本质，我进行一些解释和画重点操作，小伙伴们可以从中挑选一款相对于自己来说比较好理解的概念，自己意会。维基百科闭包，不同于一般的函数，它允许一个函数在立即词法作用域外调用时，仍然访问非本地变量 MDN上面这么说：闭包是一种特殊的对象。闭包是由两部分构成：函数，以及创建该函数的环境。环境由闭包创建时在作用域中的任何局部变量组成。">
+<meta name="description" content="这个方法了不起啊。。vue.js是通过它实现双向绑定的。。而且Object.observe也被草案发起人撤回了。。所以defineProperty更有必要了解一下了。 几行代码看他怎么用 var a= {} Object.defineProperty(a,&amp;quot;b&amp;quot;,{   value:123 }) console.log(a.b);//123 很简单，它接受三个参数，而且都是必填">
 <meta property="og:type" content="article">
-<meta property="og:title" content="闭包的概念：不同解读一览。">
-<meta property="og:url" content="http://yoursite.com/2018/05/03/闭包/index.html">
+<meta property="og:title" content="神奇的 Object.defineProperty">
+<meta property="og:url" content="http://yoursite.com/2018/05/03/Object.defineProperty/index.html">
 <meta property="og:site_name" content="LJC 的 极地世界">
-<meta property="og:description" content="闭包的概念：不同解读一览以下节选了一些对闭包概念的不同理解，基本都没偏离本质，我进行一些解释和画重点操作，小伙伴们可以从中挑选一款相对于自己来说比较好理解的概念，自己意会。维基百科闭包，不同于一般的函数，它允许一个函数在立即词法作用域外调用时，仍然访问非本地变量 MDN上面这么说：闭包是一种特殊的对象。闭包是由两部分构成：函数，以及创建该函数的环境。环境由闭包创建时在作用域中的任何局部变量组成。">
+<meta property="og:description" content="这个方法了不起啊。。vue.js是通过它实现双向绑定的。。而且Object.observe也被草案发起人撤回了。。所以defineProperty更有必要了解一下了。 几行代码看他怎么用 var a= {} Object.defineProperty(a,&amp;quot;b&amp;quot;,{   value:123 }) console.log(a.b);//123 很简单，它接受三个参数，而且都是必填">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-03T05:37:28.485Z">
+<meta property="og:updated_time" content="2018-05-03T07:28:12.771Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="闭包的概念：不同解读一览。">
-<meta name="twitter:description" content="闭包的概念：不同解读一览以下节选了一些对闭包概念的不同理解，基本都没偏离本质，我进行一些解释和画重点操作，小伙伴们可以从中挑选一款相对于自己来说比较好理解的概念，自己意会。维基百科闭包，不同于一般的函数，它允许一个函数在立即词法作用域外调用时，仍然访问非本地变量 MDN上面这么说：闭包是一种特殊的对象。闭包是由两部分构成：函数，以及创建该函数的环境。环境由闭包创建时在作用域中的任何局部变量组成。">
+<meta name="twitter:title" content="神奇的 Object.defineProperty">
+<meta name="twitter:description" content="这个方法了不起啊。。vue.js是通过它实现双向绑定的。。而且Object.observe也被草案发起人撤回了。。所以defineProperty更有必要了解一下了。 几行代码看他怎么用 var a= {} Object.defineProperty(a,&amp;quot;b&amp;quot;,{   value:123 }) console.log(a.b);//123 很简单，它接受三个参数，而且都是必填">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/03/闭包/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/03/Object.defineProperty/"/>
 
 
 
 
 
-  <title>闭包的概念：不同解读一览。 | LJC 的 极地世界</title>
+  <title>神奇的 Object.defineProperty | LJC 的 极地世界</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/闭包/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/Object.defineProperty/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LJC">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">闭包的概念：不同解读一览。</h1>
+          <h1 class="post-title" itemprop="name headline">神奇的 Object.defineProperty</h1>
         
 
         <div class="post-meta">
@@ -261,7 +261,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T13:30:29+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T15:27:50+08:00">
                 2018-05-03
               </time>
             
@@ -299,19 +299,94 @@
       
 
       
-        <h2 id="闭包的概念：不同解读一览"><a href="#闭包的概念：不同解读一览" class="headerlink" title="闭包的概念：不同解读一览"></a>闭包的概念：不同解读一览</h2><h3 id="以下节选了一些对闭包概念的不同理解，基本都没偏离本质，我进行一些解释和画重点操作，小伙伴们可以从中挑选一款相对于自己来说比较好理解的概念，自己意会。"><a href="#以下节选了一些对闭包概念的不同理解，基本都没偏离本质，我进行一些解释和画重点操作，小伙伴们可以从中挑选一款相对于自己来说比较好理解的概念，自己意会。" class="headerlink" title="以下节选了一些对闭包概念的不同理解，基本都没偏离本质，我进行一些解释和画重点操作，小伙伴们可以从中挑选一款相对于自己来说比较好理解的概念，自己意会。"></a>以下节选了一些对闭包概念的不同理解，基本都没偏离本质，我进行一些解释和画重点操作，小伙伴们可以从中挑选一款相对于自己来说比较好理解的概念，自己意会。</h3><h3 id="维基百科"><a href="#维基百科" class="headerlink" title="维基百科"></a>维基百科</h3><pre><code>闭包，不同于一般的函数，它允许一个函数在立即词法作用域外调用时，仍然访问非本地变量
-</code></pre><h3 id="MDN上面这么说："><a href="#MDN上面这么说：" class="headerlink" title="MDN上面这么说："></a>MDN上面这么说：</h3><pre><code>闭包是一种特殊的对象。闭包是由两部分构成：函数，以及创建该函数的环境。环境由闭包创建时在作用域中的任何局部变量组成。
-</code></pre><h3 id="闭包概念-根据《javascript权威指南》里对闭包的解释："><a href="#闭包概念-根据《javascript权威指南》里对闭包的解释：" class="headerlink" title="闭包概念 根据《javascript权威指南》里对闭包的解释："></a>闭包概念 根据《javascript权威指南》里对闭包的解释：</h3><pre><code>所有的javascript函数都是闭包。而当一个嵌套函数被导出到它所定义的作用域外时，闭包会更有趣。
-</code></pre><h3 id="阮一峰的理解："><a href="#阮一峰的理解：" class="headerlink" title="阮一峰的理解："></a>阮一峰的理解：</h3><pre><code>闭包就是能够读取其他函数内部变量的函数。
-</code></pre><h3 id="javascript高级程序设计（红宝书）的解释）："><a href="#javascript高级程序设计（红宝书）的解释）：" class="headerlink" title="javascript高级程序设计（红宝书）的解释）："></a>javascript高级程序设计（红宝书）的解释）：</h3><pre><code>闭包就是指有权访问另一个函数作用域中的变量的函数。
-</code></pre><a id="more"></a>
-<h1 id="有问题反馈"><a href="#有问题反馈" class="headerlink" title="有问题反馈"></a>有问题反馈</h1><p>在使用中有任何问题，欢迎反馈给我，可以用以下联系方式跟我交流</p>
-<ul>
-<li>邮件(dev.hubo#gmail.com, 把#换成@)</li>
-<li>QQ: 287759234</li>
-<li>weibo: <a href="http://weibo.com/ihubo" target="_blank" rel="noopener">@草依山</a></li>
-<li>twitter: <a href="http://twitter.com/ihubo" target="_blank" rel="noopener">@ihubo</a></li>
-</ul>
+        <p>这个方法了不起啊。。vue.js是通过它实现双向绑定的。。而且Object.observe也被草案发起人撤回了。。所以defineProperty更有必要了解一下了。</p>
+<p>几行代码看他怎么用</p>
+<pre><code>var a= {}
+Object.defineProperty(a,&quot;b&quot;,{
+  value:123
+})
+console.log(a.b);//123
+</code></pre><p>很简单，它接受三个参数，而且都是必填的。。</p>
+<a id="more"></a>
+<h3 id="传入参数"><a href="#传入参数" class="headerlink" title="传入参数"></a>传入参数</h3><p>第一个参数：目标对象</p>
+<p>第二个参数：需要定义的属性或方法的名字。</p>
+<p>第三个参数：目标属性所拥有的特性。（descriptor）</p>
+<p>前两个参数不多说了，一看代码就懂，主要看第三个参数descriptor，看看有哪些取值</p>
+<h3 id="descriptor"><a href="#descriptor" class="headerlink" title="descriptor"></a>descriptor</h3><ol>
+<li>value：属性的值(不用多说了)</li>
+<li>writable：如果为false，属性的值就不能被重写,只能为只读了</li>
+<li>configurable：总开关，一旦为false，就不能再设置他的（value，writable，configurable）</li>
+<li>enumerable：是否能在for…in循环中遍历出来或在Object.keys中列举出来。</li>
+<li>get</li>
+<li>set</li>
+</ol>
+<h3 id="descriptor默认值"><a href="#descriptor默认值" class="headerlink" title="descriptor默认值"></a>descriptor默认值</h3><p>我们再看看第一个例子</p>
+<pre><code>var a= {}
+Object.defineProperty(a,&quot;b&quot;,{
+  value:123
+})
+console.log(a.b);//123
+</code></pre><p>我们只设置了 value，别的并没有设置，但是第一次的时候 可以简单的理解为（暂时这样理解）它会默认帮我们把writable，configurable，enumerable。都设上值，而且值还都是false。。也就是说，上面代码和下面是等价的的（仅限于第一次设置的时候）。</p>
+<pre><code>var a= {}
+Object.defineProperty(a,&quot;b&quot;,{
+  value:123,
+  writable:false,
+  enumerable:false,
+  configurable:false
+})
+console.log(a.b);//123
+</code></pre><p><strong>以上非常重要哦。。并且以上理解对set 和 get 不起作用哦</strong></p>
+<h3 id="configurable"><a href="#configurable" class="headerlink" title="configurable"></a>configurable</h3><p>总开关，第一次设置 false 之后，，第二次什么设置也不行了，比如说</p>
+<pre><code>var a= {}
+Object.defineProperty(a,&quot;b&quot;,{
+  configurable:false
+})
+Object.defineProperty(a,&quot;b&quot;,{
+  configurable:true
+})
+//error: Uncaught TypeError: Cannot redefine property: b
+</code></pre><p>就会报错了。。</p>
+<p>注意上面讲的默认值。。。如果第一次不设置它会怎样。。会帮你设置为false。。所以。。第二次。再设置他会怎样？。。对喽，，会报错</p>
+<h3 id="writable"><a href="#writable" class="headerlink" title="writable"></a>writable</h3><p>如果设置为fasle，就变成只读了。。</p>
+<pre><code>var a = {}; 
+
+Object.defineProperty(o, &quot;b&quot;, { 
+value : 123,
+writable : false });
+
+console.log(a.b); // 打印 37
+a.b = 25; // 没有错误抛出（在严格模式下会抛出，即使之前已经有相同的值）
+console.log(o.a); // 打印 37， 赋值不起作用。
+</code></pre><h3 id="enumerable"><a href="#enumerable" class="headerlink" title="enumerable"></a>enumerable</h3><p>属性特性 enumerable 定义了对象的属性是否可以在 for…in 循环和 Object.keys() 中被枚举。</p>
+<pre><code>var a= {}
+Object.defineProperty(a,&quot;b&quot;,{
+  value:3445,
+  enumerable:true
+})
+console.log(Object.keys(a));// 打印[&quot;b&quot;]
+</code></pre><p>改为false</p>
+<pre><code>var a= {}
+Object.defineProperty(a,&quot;b&quot;,{
+  value:3445,
+  enumerable:false //注意咯这里改了
+})
+console.log(Object.keys(a));// 打印[]
+</code></pre><h3 id="set-和-get"><a href="#set-和-get" class="headerlink" title="set 和 get"></a>set 和 get</h3><p>在 descriptor 中不能同时设置访问器（get 和 set）和 wriable 或 value，否则会错，就是说想用 get 和 set，就不能用 writable 或 value 中的任何一个。</p>
+<p>set 和 get，他俩干啥用的的。</p>
+<pre><code>var a= {}
+Object.definePrope`请输入代码`rty(a,&quot;b&quot;,{
+  set:function(newValue){
+    console.log(&quot;你要赋值给我,我的新值是&quot;＋newValue)
+    },
+  get:function(){
+    console.log(&quot;你取我的值&quot;)
+    return 2 //注意这里，我硬编码返回2
+   }
+})
+a.b =1 //打印 你要赋值给我,我的新值是1
+console.log(a.b)    //打印 你取我的值
+                    //打印 2    注意这里，和我的硬编码相同的
+</code></pre><p>简单来说，这个 “b” 赋值或者取值的时候会分别触发 set 和 get 对应的函数。</p>
 
       
     </div>
@@ -336,8 +411,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/02/one/" rel="next" title="MaHua">
-                <i class="fa fa-chevron-left"></i> MaHua
+              <a href="/2018/05/03/闭包/" rel="next" title="闭包的概念：不同解读一览。">
+                <i class="fa fa-chevron-left"></i> 闭包的概念：不同解读一览。
               </a>
             
           </div>
@@ -345,10 +420,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/03/Object.defineProperty/" rel="prev" title="神奇的 Object.defineProperty">
-                神奇的 Object.defineProperty <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -462,7 +533,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包的概念：不同解读一览"><span class="nav-number">1.</span> <span class="nav-text">闭包的概念：不同解读一览</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#以下节选了一些对闭包概念的不同理解，基本都没偏离本质，我进行一些解释和画重点操作，小伙伴们可以从中挑选一款相对于自己来说比较好理解的概念，自己意会。"><span class="nav-number">1.1.</span> <span class="nav-text">以下节选了一些对闭包概念的不同理解，基本都没偏离本质，我进行一些解释和画重点操作，小伙伴们可以从中挑选一款相对于自己来说比较好理解的概念，自己意会。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#维基百科"><span class="nav-number">1.2.</span> <span class="nav-text">维基百科</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MDN上面这么说："><span class="nav-number">1.3.</span> <span class="nav-text">MDN上面这么说：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#闭包概念-根据《javascript权威指南》里对闭包的解释："><span class="nav-number">1.4.</span> <span class="nav-text">闭包概念 根据《javascript权威指南》里对闭包的解释：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#阮一峰的理解："><span class="nav-number">1.5.</span> <span class="nav-text">阮一峰的理解：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript高级程序设计（红宝书）的解释）："><span class="nav-number">1.6.</span> <span class="nav-text">javascript高级程序设计（红宝书）的解释）：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#有问题反馈"><span class="nav-number"></span> <span class="nav-text">有问题反馈</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#传入参数"><span class="nav-number">1.</span> <span class="nav-text">传入参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#descriptor"><span class="nav-number">2.</span> <span class="nav-text">descriptor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#descriptor默认值"><span class="nav-number">3.</span> <span class="nav-text">descriptor默认值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#configurable"><span class="nav-number">4.</span> <span class="nav-text">configurable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#writable"><span class="nav-number">5.</span> <span class="nav-text">writable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#enumerable"><span class="nav-number">6.</span> <span class="nav-text">enumerable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#set-和-get"><span class="nav-number">7.</span> <span class="nav-text">set 和 get</span></a></li></ol></div>
             
 
           </div>
